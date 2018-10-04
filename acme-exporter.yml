@@ -1,0 +1,11 @@
+version: '3'
+services:
+  filewatcher:
+    image: r.patrick246.de/patrick246/acme-watcher
+    build: .
+    environment:
+      - "ACME_JSON_PATH=/acme.json"
+      - "OUTPUT_PATH=/output"
+    volumes:
+      - "/import/docker/traefik/acme.json:/acme.json"
+      - "/import/docker/traefik/certs:/output"
